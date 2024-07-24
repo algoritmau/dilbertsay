@@ -1,6 +1,8 @@
 [package]
 name = "dilbertsay"
 version = "0.1.0"
+author = ["Mauricio Paternina <hi@mau.engineer>"]
 edition = "2021"
 
 [dependencies]
+structopt = "0.2.15"
