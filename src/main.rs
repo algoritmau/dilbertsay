@@ -7,15 +7,27 @@ use structopt::StructOpt;
 
 #[derive(StructOpt)]
 struct Options {
-    message: String // [1]
+    #[structopt(default_value = "When did ignorance become a point of view?")]
+    /// What's on Dilbert's head now?
+    message: String,
+
+    #[structopt(short = "c", long = "character", default_value = "dilbert")]
+    /// dilbert, dogbert, tim, alice, catbert, or wally
+    character: String,
+
+    #[structopt(short = "f", long = "full")]
+    /// Show character in full (only available for dilbert)
+    full: bool
 }
 
 fn main() {
-    let options = Options::from_args();  // [2]
-    //let message = std::env::args().nth(1)
-    //    .expect("Expected a message but received none.\n\tUsage: \"dilbertsay <message>\"");
+    let options = Options::from_args();
     let message = options.message;
-    let ascii_art = get_ascii_art(String::from("dilbert"));
+    let mut ascii_art = get_ascii_art(String::from(options.character));
+
+    if options.full {
+        ascii_art = get_ascii_art(String::from("dilbert_full"));
+    }
 
     println!("
     {message}

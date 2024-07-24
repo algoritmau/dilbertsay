@@ -5,7 +5,7 @@ A Rust library for printing out text with Dilbert characters as mascots.
 ## Features
 
 - Takes a string as a positional argument
-- Takes a `-a`/`--alt` flag that makes Dilbert appearance different.
+- Takes a `-f`/`--full` flag that render Dilbert in full (standing).
 - Takes a `-c`/`--character` optional value to select a particular character.
 - Takes a `-h`/`--help` flag to print a help message.
 - Takes a `-v`/`--version` flag to print version information.
@@ -18,7 +18,7 @@ A Rust library for printing out text with Dilbert characters as mascots.
 
 Only a stable version of the Rust compiler is needed.
 
-## How to use Ricksay
+## How to use dilbertsay
 
 Add the following line to your `Cargo.toml` file:
 
