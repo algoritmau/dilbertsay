@@ -170,18 +170,12 @@ fn create_ascii_art_catalog() -> HashMap<String, String> {
 pub fn get_ascii_art(character: String) -> String {
     let catalog = create_ascii_art_catalog();
 
-    if catalog.contains_key(&character) {
-        return catalog.get(&character).unwrap().to_string()
+    let ascii_art = if catalog.contains_key(&character) {
+        catalog.get(&character).unwrap().to_string()
     } else {
-        return catalog.get("dilbert").unwrap().to_string()
+        catalog.get("dilbert").unwrap().to_string()
     };
 
-    //let ascii_art = if catalog.contains_key(&character) {
-    //    catalog.get(&character)
-    //} else {
-    //    catalog.get("dilbert")
-    //};
-    //
-    //ascii_art
+    ascii_art
 }
 
